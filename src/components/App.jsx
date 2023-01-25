@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid';
 
 import ContactsList from './ContactsList';
 
-class Contacts extends Component {
+export class App extends Component {
   state = {
     contacts: [
       { id: nanoid(), name: 'Rosie Simpson', number: '459-12-56' },
@@ -82,14 +82,6 @@ class Contacts extends Component {
     const { name, number } = this.state;
     const acceptedContacts = this.getFilteredContacts();
 
-    const allContacts = acceptedContacts.map(({ id, name, number }) => (
-      <li key={id}>
-        {name}: {number}
-        <button onClick={() => deleteContact(id)} type="button">
-          Delete
-        </button>
-      </li>
-    ));
     return (
       <>
         <div>
@@ -136,11 +128,9 @@ class Contacts extends Component {
             type="text"
           ></input>
           {/* <ul>{allContacts}</ul> */}
-          <ContactsList/>
+          {/* <ContactsList/> */}
         </div>
       </>
     );
   }
 }
-
-export default Contacts;
