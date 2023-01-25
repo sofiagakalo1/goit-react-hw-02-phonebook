@@ -5,14 +5,11 @@ import ContactsList from './ContactsList';
 import ContactsFilter from './ContactsFilter';
 import ContactsForm from './ContactsForm';
 
+import css from './app.module.css';
+
 export class App extends Component {
   state = {
-    contacts: [
-      { id: nanoid(), name: 'Rosie Simpson', number: '459-12-56' },
-      { id: nanoid(), name: 'Hermione Kline', number: '443-89-12' },
-      { id: nanoid(), name: 'Eden Clements', number: '645-17-79' },
-      { id: nanoid(), name: 'Annie Copeland', number: '227-91-26' },
-    ],
+    contacts: [],
     filter: '',
   };
 
@@ -76,17 +73,19 @@ export class App extends Component {
 
     return (
       <>
-        <div>
-          <h2>Phonebook</h2>
-          <ContactsForm onSubmit={addContact} />
-        </div>
-        <div>
-          <h3>Contacts</h3>
-          <ContactsFilter onInputChange={handleFilter} />
-          <ContactsList
-            deleteContact={deleteContact}
-            acceptedContacts={acceptedContacts}
-          />
+        <div className={css.block}>
+          <div className={css.wrapper}>
+            <h2 className={css.h2}>Phonebook</h2>
+            <ContactsForm onSubmit={addContact} />
+          </div>
+          <div className={css.wrapper}>
+            <h3 className={css.h3}>Contacts</h3>
+            <ContactsFilter onInputChange={handleFilter} />
+            <ContactsList
+              deleteContact={deleteContact}
+              acceptedContacts={acceptedContacts}
+            />
+          </div>
         </div>
       </>
     );

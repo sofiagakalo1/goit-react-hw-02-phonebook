@@ -1,0 +1,30 @@
+.ul {
+  /* display: flex;
+    flex-direction: column;
+    gap: ; */
+}
+
+.li {
+  margin-bottom: 12px;
+  font-weight: normal;
+  font-size: 14px;
+  color: #2c3e50;
+}
+
+.button {
+  margin-left: 10px;
+  width: 60px;
+  background: #ee7ab2;
+  color: white;
+  border: 0 none;
+  border-radius: 25px;
+  cursor: pointer;
+  padding: 3px 3px;
+}
+
+.button:hover {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #ee0979;
+}
+.button:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #ee0979;
+}

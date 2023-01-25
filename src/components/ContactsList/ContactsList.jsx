@@ -1,16 +1,20 @@
 import PropTypes from 'prop-types';
-// import css from './contactsList.module.css';
+import css from './contactsList.module.css';
 
 const ContactsList = ({ deleteContact, acceptedContacts }) => {
   const allContacts = acceptedContacts.map(({ id, name, number }) => (
-    <li key={id}>
+    <li key={id} className={css.li}>
       {name}: {number}
-      <button onClick={() => deleteContact(id)} type="button">
+      <button
+        onClick={() => deleteContact(id)}
+        type="button"
+        className={css.button}
+      >
         Delete
       </button>
     </li>
   ));
-  return <ul>{allContacts}</ul>;
+  return <ul className={css.ul}>{allContacts}</ul>;
 };
 
 ContactsList.defaultProps = {

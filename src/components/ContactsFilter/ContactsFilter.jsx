@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
+import css from './contactsFilter.module.css';
 
 const ContactsFilter = ({ onInputChange }) => {
   return (
-    <div>
-      {' '}
-      <h4>Find contacts by name</h4>
+    <div className={css.filterBlock}>
+      <h4 className={css.h4}>Find contacts by name</h4>
       <input
         name="filter"
         onChange={onInputChange}
+        className={css.input}
         placeholder="Type name..."
         type="text"
       ></input>
