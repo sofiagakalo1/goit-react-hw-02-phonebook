@@ -23,22 +23,16 @@ export class App extends Component {
   isAlreadyExists(name, number) {
     const { contacts } = this.state;
     const normalizedName = name.toLowerCase();
-    const normalizedNumber = number.toLowerCase();
-    const result = contacts.find(({ name, number }) => {
-      return (
-        name.toLowerCase() === normalizedName &&
-        number.toLowerCase() === normalizedNumber
-      );
+    const result = contacts.find(({ name }) => {
+      return name.toLowerCase() === normalizedName;
     });
     return Boolean(result);
   }
 
   addContact = ({ name, number }) => {
     // console.log(this.state);
-    if (this.isAlreadyExists(name, number)) {
-      return alert(
-        `${name} with number ${number} is already in your contacts!`
-      );
+    if (this.isAlreadyExists(name)) {
+      return alert(`${name} is already in your contacts!`);
     }
     this.setState(prevState => {
       const { contacts } = prevState;
