@@ -63,6 +63,7 @@ export class App extends Component {
 
   render() {
     const { addContact, deleteContact, handleFilter } = this;
+    const {filter} = this.state;
     const acceptedContacts = this.getFilteredContacts();
 
     return (
@@ -74,7 +75,7 @@ export class App extends Component {
           </div>
           <div className={css.wrapper}>
             <h3 className={css.h3}>Contacts</h3>
-            <ContactsFilter onInputChange={handleFilter} />
+            <ContactsFilter onInputChange={handleFilter} filter={filter}/>
             <ContactsList
               deleteContact={deleteContact}
               acceptedContacts={acceptedContacts}
